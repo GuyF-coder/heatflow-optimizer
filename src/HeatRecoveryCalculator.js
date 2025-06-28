@@ -16,10 +16,10 @@ function HeatRecoveryCalculator() {
 
   const calculateSteam = () => {
     const deltaT = gasTempIn - gasTempOut;
-    const energyRecovered = gasFlow * cpGas * deltaT * boilerEff; // kJ/h
-    const steamProduced = energyRecovered / latentHeatSteam; // kg/h
-    const gasSaved = energyRecovered / (cpGas * 100 * boilerEff); // Nm³/h
-    const costSaved = gasSaved * gasCost; // ₪/h
+    const energyRecovered = gasFlow * cpGas * deltaT * boilerEff;
+    const steamProduced = energyRecovered / latentHeatSteam;
+    const gasSaved = energyRecovered / (cpGas * 100 * boilerEff);
+    const costSaved = gasSaved * gasCost;
 
     setSteamOutput(steamProduced.toFixed(2));
     setGasSavings(costSaved.toFixed(2));
